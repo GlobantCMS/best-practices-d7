@@ -1,0 +1,503 @@
+<!DOCTYPE HTML>
+<html lang="es-AR" class="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=360, initial-scale=0.2">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="author" content="John Herreño">
+    <meta name="description" content="Buenas prácticas en la creación y desarrollo de sitios web usando Drupal 7">
+    <title>Buenas Prácticas de desarrollo en Drupal 7</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="css/flowtime.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+    <link rel=stylesheet href=assets/fonts/roboto/roboto_blackitalic_macroman/stylesheet.css type=text/css charset=utf-8 />
+    <link rel=stylesheet href=assets/fonts/roboto/roboto_black_macroman/stylesheet.css type=text/css charset=utf-8 />
+    <link rel=stylesheet href=assets/fonts/roboto/roboto_boldcondenseditalic_macroman/stylesheet.css type=text/css charset=utf-8 />
+    <link rel=stylesheet href=assets/fonts/roboto/roboto_boldcondensed_macroman/stylesheet.css type=text/css charset=utf-8 />
+    <link rel=stylesheet href=assets/fonts/roboto/roboto_bolditalic_macroman/stylesheet.css type=text/css charset=utf-8 />
+    <link rel=stylesheet href=assets/fonts/roboto/roboto_bold_macroman/stylesheet.css type=text/css charset=utf-8 />
+    <link rel=stylesheet href=assets/fonts/roboto/roboto_condenseditalic_macroman/stylesheet.css type=text/css charset=utf-8 />
+    <link rel=stylesheet href=assets/fonts/roboto/roboto_condensed_macroman/stylesheet.css type=text/css charset=utf-8 />
+    <link rel=stylesheet href=assets/fonts/roboto/roboto_italic_macroman/stylesheet.css type=text/css charset=utf-8 />
+    <link rel=stylesheet href=assets/fonts/roboto/roboto_lightcondenseditalic_macroman/stylesheet.css type=text/css charset=utf-8 />
+    <link rel=stylesheet href=assets/fonts/roboto/roboto_lightcondensed_macroman/stylesheet.css type=text/css charset=utf-8 />
+    <link rel=stylesheet href=assets/fonts/roboto/roboto_lightitalic_macroman/stylesheet.css type=text/css charset=utf-8 />
+    <link rel=stylesheet href=assets/fonts/roboto/roboto_light_macroman/stylesheet.css type=text/css charset=utf-8 />
+    <link rel=stylesheet href=assets/fonts/roboto/roboto_mediumitalic_macroman/stylesheet.css type=text/css charset=utf-8 />
+    <link rel=stylesheet href=assets/fonts/roboto/roboto_medium_macroman/stylesheet.css type=text/css charset=utf-8 />
+    <link rel=stylesheet href=assets/fonts/roboto/roboto_regular_macroman/stylesheet.css type=text/css charset=utf-8 />
+    <link rel=stylesheet href=assets/fonts/roboto/roboto_thinitalic_macroman/stylesheet.css type=text/css charset=utf-8 />
+    <link rel=stylesheet href=assets/fonts/roboto/roboto_thin_macroman/stylesheet.css type=text/css charset=utf-8 />
+    <link rel="stylesheet" href="css/themes/globant.css">
+    <link rel="apple-touch-icon-precomposed" href="img/touch-icon-iphone.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/touch-icon-ipad.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/touch-icon-ipad-retina.png">
+    <link rel="apple-touch-startup-image" href="img/startup-640x920.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)">
+    <link rel="apple-touch-startup-image" href="img/startup-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)">
+</head>
+
+<body class="">
+    <div class="flowtime">
+        <div class="ft-section" data-id="section-1">
+            <div id="/section-1/page-1" class="ft-page branding" data-id="page-1" data-title="Buenas prácticas en desarrollos con Drupal 7">
+                <div class="stack-center">
+                  <img class="stacked-center simple" src="assets/img/globant-logo-white.png" alt="Globant - We are ready">
+                </div>
+            </div>
+            <div id="/section-1/page-2" class="ft-page" data-id="page-2" data-title="Buenas prácticas en desarrollos con Drupal 7">
+                <div class="stack-center">
+                    <div class="stacked-center">
+                        <img class="simple" src="assets/img/logo-white.png">
+                        <p class="page-title">Buenas Prácticas de desarrollo en Drupal 7</p>
+                        <p>John Herreño - Octubre de 2015</p>
+                        <p class="footnote">Basada en <a href="http://cuencodigital.com/buenas-practicas-en-drupal7">Buenas prácticas en desarrollos con Drupal 7</a>, de Mariano D'Agostino.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="/section-1/page-3" class="ft-page" data-id="page-3">
+                <h1>Hola!</h1>
+                <h2>/about</h2>
+                <p>John Herreño (jedihe), Ing. Electrónico, 6 años usando Drupal.</p>
+                <p>Sr. Drupal Developer @ Globant</p>
+                <p>Acquia Certified Developer - Backend Specialist</p>
+            </div>
+            <div id="/section-1/page-4" class="ft-page" data-id="page-4">
+                <h1>Introducción</h1>
+                <h2>¿Por qué molestarnos en aplicar buenas prácticas?</h2>
+                <ul>
+                    <li>Calidad</li>
+                    <li>Mantenibilidad
+                    <ul>
+                      <li>Rotación de desarrolladores</li>
+                      <li>Actualizaciones</li>
+                      <li>Tú mismo en el futuro...</li>
+                    </ul>
+                    </li>
+                    <li>Facilita contribuir a Drupal</li>
+                </ul>
+            </div>
+            <div id="/section-1/page-5" class="ft-page" data-id="page-5">
+                <h1>Analizaremos tres etapas:</h1>
+                <ol>
+                    <li>Preparación del proyecto.</li>
+                    <li>Construcción + Desarrollo.</li>
+                    <li>Despliegue y mantenimiento.</li>
+                </ol>
+            </div>
+        </div>
+        <div class="ft-section" data-id="section-2">
+            <div id="/section-2/page-1" class="ft-page" data-id="page-1">
+                <h1>Fase 1: Preparación</h1>
+                <ul>
+                    <li>Ambiente local y plataforma base.</li>
+                    <li>Estructura de directorios.</li>
+                    <li>Despliegue de cambios de configuración y actualizaciones.</li>
+                    <li>IDEs.</li>
+                </ul>
+            </div>
+            <div id="/section-2/page-2" class="ft-page" data-id="page-2">
+                <h1>Ambiente local y plataforma base</h1>
+                <ul>
+                    <li>Usar <a href="https://www.vagrantup.com/">Vagrant</a>/<a href="https://www.docker.com/">Docker</a> para el entorno local.</li>
+                    <li>Perfil de Drupal
+                      <ul>
+                        <li>Drupal mínimo/estándar.</li>
+                        <img class="simple" src="assets/img/drupal-base.png" />
+                        <li>Usar una <a href="https://www.drupal.org/project/project_distribution?solrsort=iss_project_release_usage desc">distribución</a>.</li>
+                        <img class="simple" src="assets/img/drupal-distros.png" />
+                      </ul>
+                    </li>
+                </ul>
+            </div>
+            <div id="/section-2/page-3" class="ft-page" data-id="page-3">
+                <h1>Buena Práctica: Crear nuestro propio perfil base</h1>
+                <ul>
+                    <li>Copiar y renombrar el perfil estándar.</li>
+                    <li>Permite tener un lugar unificado para escribir updates.</li>
+                    <li>Permite actualizar todo el núcleo de Drupal sin hackear el core.</li>
+                </ul>
+                <p><img src="assets/img/drupal-install-profile.png" /></p>
+            </div>
+            <div id="/section-2/page-4" class="ft-page" data-id="page-4">
+                <h1>Buena Práctica: Registrar los módulos usados en un archivo .make</h1>
+                <ul>
+                    <li>Documentación implícita de módulos + versiones (7.x-1.0, 7.x-2.x-beta-2, etc).</li>
+                    <li>Gestión ordenada de los parches aplicados.</li>
+                    <li>Automatiza descarga de módulos y bibliotecas (no sólo de drupal.org).</li>
+                    <li>Más info:
+                      <ul>
+                        <li><a href="https://www.drupal.org/node/1432374">Full example drupal-org.make file</a></li>
+                        <li><a href="https://www.drupal.org/node/1006620">Drush Make theory for happy profile development</a></li>
+                      </ul>
+                    </li>
+                </ul>
+                <p><img src="assets/img/drupal-drush-make.png" /></p>
+            </div>
+            <div id="/section-2/page-5" class="ft-page" data-id="page-5">
+                <h1>Buena Práctica: Separar los módulos custom de los contribuidos</h1>
+                <p><img src="assets/img/drupal-organizacion-modulos.png" /></p>
+                <ul>
+                    <li>Definir de antemano los criterios para nombrar módulos.
+                      <ul>
+                        <li>Prefijo de módulos propios: CLIENTE_</li>
+                      </ul>
+                    </li>
+                    <li>Procurar un buen balance:
+                    <ul>
+                      <li>Evitar que los módulos multi-propósito tengan demasiado código (10.000+ LDC).</li>
+                      <li>No crear módulos separados para cada pequeño ajuste.</li>
+                    </ul>
+                    </li>
+                </ul>
+            </div>
+            <div id="/section-2/page-6" class="ft-page" data-id="page-6">
+                <h1>Buena Práctica: Configuración y actualizaciones en código</h1>
+                <ul>
+                    <li>Utilizar <a href="https://drupal.org/project/features">Features</a> o <a href="https://drupal.org/project/configuration">Configuration Management</a> para hacer el seguimiento de cambios.</li>
+                    <li>Instalar/desinstalar módulos utilizando hook_update_N.
+                      <ul>
+                        <li>Nunca* realizar <span class="attention">cambios de forma manual</span> en producción.</li>
+                      </ul>
+                    </li>
+                    <li>Siempre probar los despliegues en un entorno alterno e idéntico* a producción.</li>
+                </ul>
+                <p class="footnote">*: hasta donde sea posible.</p>
+            </div>
+            <div id="/section-2/page-7" class="ft-page" data-id="page-7">
+                <h1>Buena Práctica: Gestionar configuración/customizaciones por entorno</h1>
+                <ul>
+                    <li>Usando hooks alter para modificar los features.</li>
+                    <li>Usando <a href="https://www.drupal.org/project/features_override">Features Override</a>.</li>
+                    <li>Definiendo valores en el settings.php.
+                      <ul>
+                        <li>Haciendo include a settings.$env.php.</li>
+                        <li>Provisionar settings.$env.php mediante Chef/Puppet.</li>
+                      </ul>
+                    </li>
+                    <li>Más info: <a href="http://www.phase2technology.com/blog/how-to-override-features/">How to override features</a>.</li>
+                </ul>
+            </div>
+            <div id="/section-2/page-8" class="ft-page" data-id="page-8">
+                <h1>Buena Práctica: Configurar los IDEs y aplicar los Coding Standards</h1>
+                <ul>
+                    <li>Drupal tiene <a href="https://www.drupal.org/coding-standards">estándares de codificación</a> bien definidos.</li>
+                    <li>Cada IDE o editor puede configurarse para respetar estas convenciones.</li>
+                    <li>Configurar un depurador y <a href="https://www.drupal.org/project/coder">Coder</a>.</li>
+                </ul>
+                    <pre class="language-clike"><code class="language-clike">function node_object_prepare($node) {
+  // Set up default values, if required.
+  $node_options = variable_get('node_options_' . $node->type, array('status', 'promote'));
+  // If this is a new node, fill in the default values.
+  if (!isset($node->nid) || isset($node->is_new)) {
+    foreach (array('status', 'promote', 'sticky') as $key) {
+      // Multistep node forms might have filled in something already.
+      if (!isset($node->$key)) {
+        $node->$key = (int) in_array($key, $node_options);
+      }
+    }
+    // ...
+  }
+  // ...
+}</code></pre>
+            </div>
+        </div>
+        <div class="ft-section" data-id="section-3">
+            <div id="/section-3/page-1" class="ft-page" data-id="page-1">
+                <h1>Fase 2: Desarrollo</h1>
+                <ul>
+                  <li>¿Cómo escoger módulos contribuidos?</li>
+                  <li>Temas pre-diseñados vs. custom.</li>
+                  <li>¿Qué poner en features?, ¿qué implementar en módulos custom?</li>
+                  <li>Convenciones para nombrar componentes (features) y módulos propios.</li>
+                  <li>Buenas prácticas para el código propio.</li>
+                </ul>
+            </div>
+            <div id="/section-3/page-2" class="ft-page" data-id="page-2">
+                <h1>¿Cómo elegir los módulos contribuidos?</h1>
+                <ul>
+                    <li>Los módulos estables<sup>1</sup> son más seguros, pues son revisados por el equipo de seguridad.</li>
+                    <li>Pero a veces están muy desactualizados!</li>
+                </ul>
+                <img src="assets/img/drupal-versiones-modulos.png" />
+                <p class="footnote">1: beta no cuenta como estable.</p>
+            </div>
+            <div id="/section-3/page-3" class="ft-page" data-id="page-3">
+                <h1>¿Y con respecto a los themes?</h1>
+                <ul>
+                    <li><a href="https://drupal.org/project/omega">Omega</a> y <a href="https://drupal.org/project/zen">Zen</a> son muy buenas opciones. Siempre crear un subtema.</li>
+                    <li>Usar las características de SASS que tienen incluidas.</li>
+                    <li>Evitar temas pre-fabricados, incluso si se ven parecidos al diseño que buscamos.</li>
+                    <img class="simple" src="assets/img/drupal-themes.png" />
+                    <li>No implementar lógica en tpl's.</li>
+                    <li>JavaScript: usar <a href="https://www.drupal.org/node/756722">behaviors</a>.</li>
+                    <li>Tip: usar <a href="https://www.drupal.org/project/css_watch">CSS Watch</a> para refrescar estilos (similar a LiveReload).</li>
+                </ul>
+            </div>
+            <div id="/section-3/page-4" class="ft-page" data-id="page-4">
+                <h1>¿Cómo organizar los features?</h1>
+                <ul>
+                    <li>Criterios de agrupación comunes:
+                      <ul>
+                        <li>Tipo de Contenido</li>
+                        <li>Funcionalidad</li>
+                      </ul>
+                    </li>
+                    <li>Los permisos y las configuraciones globales (pathauto, wysiwyg, etc) pueden agruparse todas en un mismo feature.</li>
+                    <li>Instalar <a href="https://drupal.org/project/role_export">Role Export</a> lo antes posible.</li>
+                    <li>Preferir controles de acceso basados en permisos en lugar de roles<sup>1</sup> (ej. Views).</li>
+                    <li>Evitar tener cientos de features, considerar el impacto en el rendimiento.</li>
+                </ul>
+                <p class="footnote">1: El problema son los ids numéricos, que no son fáciles de replicar entre ambientes.</p>
+            </div>
+            <div id="/section-3/page-5" class="ft-page" data-id="page-5">
+                <h1>¿Cómo nombrar los componentes?</h1>
+                <h2><strong>Atención! No descuidar los nombres de los componentes!</strong></h2>
+                <ul>
+                    <li>Mantener consistencia entre Tipos de Contenido, Vistas, nombres de campos, variables.</li>
+                    <li>Evitar los nombres predeterminados como page_1, block_1, content_pane_1.</li>
+                    <img src="assets/img/drupal-nombres-componentes.png" />
+                </ul>
+            </div>
+             <div id="/section-3/page-6" class="ft-page" data-id="page-6">
+                <h1>¿Cómo nombrar los componentes?</h1>
+                <ul>
+                    <li>Completar las descripciones para los tipos de contenido y las vistas. Otros desarrolladores (que pueden no haber trabajado en este proyecto antes) van a agradecer este esfuerzo en el futuro.</li>
+                    <img src="assets/img/drupal-nombres-componentes-content-types.png" />
+                </ul>
+            </div>
+            <div id="/section-3/page-7" class="ft-page" data-id="page-7">
+                <h1>¿Cómo nombrar los componentes?</h1>
+                <h2>Sugerencias para nombres de campos</h2>
+                <ul>
+                    <li>Campos de uso exclusivo: field_CONTENT_TYPE_* (ej. field_article_author_name)</li>
+                    <li>Campos compartidos: field_* (ej. field_image)</li>
+                    <li>Entity Reference: field_ref_* (ej. field_ref_clients)<span class="attention">*</span></li>
+                    <li>Field Collection: field_col_* (ej. field_col_album_items)<span class="attention">*</span></li>
+                </ul>
+                <p>Máximo permitido de 32 caracteres para el nombre del campo (incl. field_). Usar nombres en Inglés.</p>
+                <p>Lo importante no es seguir una convención en particular, sino tener <span class="attention">coherencia</span> en todo el desarrollo.</p>
+                <p class="footnote"><span class="attention">* sólo aplica a los campos de tipo entity reference y field collection por tratarse de campos "especiales".</span></p>
+            </div>
+            <div id="/section-3/page-8" class="ft-page" data-id="page-8">
+                <h1>Consecuencias de malos nombres o nombres genéricos</h1>
+                <p>Si evitamos definir los nombres correctamente terminamos creando código como este:</p>
+                <pre class="language-clike"><code class="language-clike">/**
+ * Implements hook_views_query_alter().
+ */
+function mimodulo_views_query_alter(&$view, &$query) {
+  if ($view->name == 'noticias' && $view->display == 'page_1') {
+    // Stuff
+  }
+  if ($view->name == 'noticias' && $view->display == 'page_2') {
+    // Stuff
+  }
+  if ($view->name == 'noticias' && $view->display == 'block_1') {
+    // Stuff
+  }
+}</code></pre>
+            </div>
+            <div id="/section-3/page-9" class="ft-page" data-id="page-9">
+                <h1>Buenas prácticas generales a la hora de escribir código</h1>
+                <ul>
+                    <li>Aplicar los <a href="https://www.drupal.org/coding-standards">coding standards</a>.</li>
+                    <li>Nombrar correctamente los módulos, variables y funciones. Ver <a href="https://www.drupal.org/node/299070">https://www.drupal.org/node/299070</a>.</li>
+                    <li>No modificar las tablas de otros módulos salvo que se sepa lo que se está haciendo.</li>
+                    <li>Aprender para qué sirven los hook_install, hook_update_N.</li>
+                    <li>Usar las APIs de Drupal: Form API, Cache API, Database API, Menu API, y otras APIs.
+                      <ul>
+                        <li>Hay muchos ejemplos útiles en el módulo <a href="https://drupal.org/project/examples">Examples</a>.</li>
+                      </ul>
+                    </li>
+                    <li></li>
+                    <li>Idioma/Multi-idioma:
+                      <ul>
+                        <li>Siempre definir el idioma del sitio.</li>
+                        <li>Todo texto visible al usuario (ej. etiquetas) debe definirse en inglés y traducirse.</li>
+                        <li>Implementar formatos de fecha localizables y usar <a href="https://api.drupal.org/api/drupal/includes%21common.inc/function/format_date/7">format_date()</a>.</li>
+                        <li>Usar <a href="https://api.drupal.org/api/drupal/includes%21bootstrap.inc/function/t/7">t()</a> con los placeholders correctos (@, %, !).</li>
+                      </ul>
+                    </li>
+                </ul>
+            </div>
+            <div id="/section-3/page-10" class="ft-page" data-id="page-10">
+                <h1>Buenas prácticas generales a la hora de escribir código</h1>
+                <h2>Escribir <a href="https://www.drupal.org/writing-secure-code">código seguro</a>!</h2>
+                <ul>
+                  <li>SQL Injection: usar <span class="attention">bien</span> el Database API.</li>
+                  <li>XSS: <a href="https://api.drupal.org/api/drupal/includes%21bootstrap.inc/function/check_plain/7">check_plain()</a>, <a href="https://api.drupal.org/api/drupal/includes%21common.inc/function/filter_xss/7">filter_xss()</a> o <a href="https://api.drupal.org/api/drupal/includes%21common.inc/function/filter_xss_admin/7">filter_xss_admin()</a>.</li>
+                  <li>CSRF: Usar tokens o formularios de confirmación.</li>
+                  <li class="attention">Cuidado con el estado global!: $user. Ver <a href="https://www.drupal.org/node/218104">Safely Impersonating Another User</a>.</li>
+                </ul>
+                <pre class="language-clike"><code class="language-clike">function quiero_ser_hackeado() {
+  global $user;
+  $user = user_load(1);
+}</code></pre>
+            </div>
+            <div id="/section-3/page-11" class="ft-page" data-id="page-11">
+                <h1>Buenas prácticas generales a la hora de escribir código</h1>
+                <ul>
+                    <li>Los archivos .module deberían tener sólo implementaciones de hooks. Agregar siempre el docblock correspondiente:
+                <img src="assets/img/drupal-minima-documentacion.png" />
+                      <ul>
+                        <li>Tip: usar <a href="http://drushcommands.com/drush-6x/devel/fn-hook">drush fnh</a>.</li>
+                      </ul>
+                    </li>
+                    <li>Crear un módulo con funciones utilitarias: Ej. CLIENTE_get_extra_user_info($uid);</li>
+                    <li>JavaScript:
+                      <ul>
+                        <li>Preferir <a href="http://www.metaltoad.com/blog/what-i-learned-today-drupal-attached-awesomeness">#attached</a> a <a href="https://api.drupal.org/api/drupal/includes%21common.inc/function/drupal_add_js/7">drupal_add_js()</a>. Usar <a href="https://www.drupal.org/node/756722#behaviors">behaviors</a>.</li>
+                        <li>No poner <span class="attention">&lt;script>&lt;/script&gt;</span> tags en los templates.</li>
+                      </ul>
+                    </li>
+                </ul>
+            </div>
+            <div id="/section-3/page-12" class="ft-page" data-id="page-12">
+                <h1>Buenas prácticas generales a la hora de escribir código</h1>
+                <ul>
+                    <li>¿Quieres escribir código OO?, revisa <a href="https://drupal.org/project/xautoload">X Autoload</a> y
+                        <a href="https://drupal.org/project/composer_manager">Composer Manager</a>.</li>
+                    <li>Para las bibliotecas externas (tanto PHP como JavaScript) usar el módulo <a href="https://drupal.org/project/libraries">Libraries</a> y configurar el directorio sites/all/libraries.</li>
+                    <li>Depurar sin Xdebug: usar el módulo <a href="https://drupal.org/project/devel">Devel</a>, en particular las funciones <code>dpm()</code> y <code>dsm()</code>.
+                      <ul>
+                        <li class="attention">Nunca habilitar devel en producción.</li>
+                        <li>Tip: usar <a href="https://www.drupal.org/node/201981#mail-to-temp-files">DevelMailLog</a> para depurar correo.</li>
+                      </ul>
+                    </li>
+                </ul>
+                <img src="assets/img/drupal-devel.png" />
+            </div>
+            <div id="/section-3/page-13" class="ft-page" data-id="page-13">
+                <h1>Buenas prácticas generales a la hora de escribir código</h1>
+                <ul>
+                    <li>Incluir un README.txt en cada módulo custom explicando su razón de ser.</li>
+                    <li>Escribir código eficiente: <a href="https://www.drupal.org/node/328206">https://www.drupal.org/node/328206</a></li>
+                    <li>Aplicar patrones para la UI en Drupal: <a href="https://www.drupal.org/node/1087090">https://www.drupal.org/node/1087090</a></li>
+                    <li>PHP: Configurar error_reporting = E_ALL. <span class="attention">Corregir todos los errores reportados.</span>
+                      <ul>
+                        <li>Tip: usar <code>!empty()</code> o <code>isset()</code>.</li>
+                      </ul>
+                    </li>
+                  <img src="assets/img/drupal-errores.png" alt="Muchos notices/warnings se pueden evitar fácilmente usando !empty() o isset()"/>
+                </ul>
+            </div>
+            <div id="/section-3/page-14" class="ft-page" data-id="page-14">
+                <h1>Buenas prácticas generales a la hora de escribir código</h1>
+                <h2>No reinventar la rueda</h2>
+                <p>Drupal tiene muchos módulos genéricos para resolver problemas comunes.</p>
+                <ul>
+                    <li><a href="https://drupal.org/project/flag">Flag</a> API para interacciones entre Usuarios y Entidades.</li>
+                    <li><a href="https://drupal.org/project/message">Message</a> API para intercambiar mensajes entre usuarios.</li>
+                    <li><a href="https://drupal.org/project/og">Organic Groups</a> API para intercambiar grupos privados y públicos.</li>
+                    <li><a href="https://drupal.org/project/votingapi">Voting API</a> para votaciones.</li>
+                </ul>
+                <p>Todos los módulos anteriores proveen formas de ser extendidos, muchos de ellos permiten agregar campos a las entidades que proveen.</p>
+            </div>
+        </div>
+        <div class="ft-section" data-id="section-4">
+            <div id="/section-4/page-1" class="ft-page" data-id="page-1">
+                <h1>Fase 3: Despliegue y mantenimiento</h1>
+                <ul>
+                    <li>Configurar el Cron.</li>
+                    <li>Deshabilitar el reporte de errores y el módulo Update.</li>
+                    <li>Configurar backups automatizados de la DB.</li>
+                    <li>Ofrecer un contrato de mantenimiento.</li>
+                </ul>
+            </div>
+            <div id="/section-4/page-2" class="ft-page" data-id="page-2">
+                <h1>Buenas prácticas antes de poner el sitio en producción.</h1>
+                <h2>Configurar el Cron</h2>
+                <ul>
+                    <li>El cron limpia tablas de caché importantes.</li>
+                    <li>¿Problemas de rendimiento?, evaluar <a href="https://drupal.org/project/elysia_cron">Elysia cron.</a></li>
+                    <li>Desactivar el cron predeterminado de Drupal. (Correrlo usando cronjobs)</li>
+                </ul>
+                <img src="assets/img/drupal-cron.png" />
+            </div>
+            <div id="/section-4/page-3" class="ft-page" data-id="page-3">
+                <h1>Buenas prácticas antes de poner el sitio en producción.</h1>
+                <ul>
+                    <li>Deshabilitar los reportes de errores.
+                    <ul>
+                      <li>Incluso si se deshabilitan los errores al usuario, <a href="https://api.drupal.org/api/drupal/includes!bootstrap.inc/function/watchdog/7">watchdog</a> sigue siendo invocado.</li>
+                      <li>Hay alternativas a dblog como syslog. (Usa el filesystem en lugar de la DB).</li>
+                    </ul>
+                    </li>
+                    <li>Deshabilitar el módulo Update.</li>
+                </ul>
+            </div>
+            <div id="/section-4/page-4" class="ft-page" data-id="page-4">
+                <h1>Buenas prácticas antes de poner el sitio en producción.</h1>
+                <h2>Configurar backups automatizados de la DB.</h2>
+                <p>Al menos uno por semana<span class="attention">*</span>, insistir en las ventajas de este método con el cliente.</p>
+                <h2>Ofrecer un contrato de mantenimiento.</h2>
+                <p>Muchos problemas con el Drupalgeddon <a href="https://www.drupal.org/PSA-2014-003">https://www.drupal.org/PSA-2014-003</a> podrían haber sido fácilmente solucionados con un simple parche en tiempo y forma.</p>
+                <p class="footnote attention">* cada proyecto debe analizarse para establecer una frecuencia óptima.</p>
+            </div>
+        </div>
+        <div class="ft-section" data-id="section-5">
+            <div id="/section-5/page-1" class="ft-page" data-id="page-1">
+                <div class="stack-center">
+                  <h1 class="stacked-center ft-fragment shy">¿Y si no lo hago...?</h1>
+                </div>
+                <div class="stack-center">
+                  <div class="stacked-center">
+                    <img style="margin: 0 auto;" class="ft-fragment simple" src="assets/img/darth-druplicon.png" alt="Darth Druplicon">
+                    <h2 class="ft-fragment">Druplicon finds your unobservance of good practices disturbing...</h2>
+                  </div>
+                </div>
+            </div>
+            <div id="/section-5/page-2" class="ft-page" data-id="page-2">
+              <h1>Veo... features gigantes...</h1>
+              <div class="stack-center">
+                <img class="ft-fragment stacked-center step simple" src="assets/img/gigantic-feature.png" alt="Feature gigante, 80k lines">
+              </div>
+              <div class="stack-center">
+                <p class="ft-fragment stacked-center step">80k+ líneas de código!</p>
+              </div>
+            </div>
+            <div id="/section-5/page-3" class="ft-page" data-id="page-3">
+              <h1>Los verdaderos machos escriben sus propios exportadores a XLS</h1>
+              <div class="stack-center">
+                <img class="stacked-center ft-fragment step" src="assets/img/gigantic-sql.png" alt="Gigantic SQL">
+              </div>
+              <div class="stack-center">
+                <p class="stacked-center ft-fragment step">Se debe poder hacer con <a href="https://www.drupal.org/project/views">Views</a> + <a href="https://www.drupal.org/project/views_data_export">Views Data Export</a></p>
+              </div>
+            </div>
+        </div>
+        <div class="ft-section" data-id="section-6">
+            <div id="/section-6/page-1" class="ft-page" data-id="page-1">
+                <h1>Gracias! ¿preguntas?</h1>
+                <ul>
+                    <li>Más info:
+                      <ul>
+                        <li><a href="https://www.drupal.org/best-practices">Best Practices (drupal.org)</a>.</li>
+                        <li><a href="https://www.lullabot.com/blog/article/why-sticking-best-practices-matters">Why sticking to best practices matters</a>.</li>
+                        <li><a href="http://www.chapterthree.com/blog/drupal-development-best-practices-techniques-part-ii">Drupal Development Best Practices: Techniques (Part II)</a>.</li>
+                      </ul>
+                    </li>
+                </ul>
+                <h2>Contacto</h2>
+                <ul>
+                    <li>John Herreño (jedihe)</li>
+                    <li><a href="mailto:john.herreno@globant.com">john.herreno@globant.com</a></li>
+                    <li><a href="mailto:jedihe@gmail.com">jedihe@gmail.com</a></li>
+                </ul>
+                <p class="footnote">Basada en <a href="http://cuencodigital.com/buenas-practicas-en-drupal7">Buenas prácticas en desarrollos con Drupal 7</a>, de Mariano D'Agostino.</p>
+            </div>
+        </div>
+    </div>
+    <script src="js/brav1toolbox.js"></script>
+    <script src="js/flowtime.js"></script>
+    <script src="assets/js/prism.js"></script>
+    <script type="text/javascript">
+
+    Flowtime.showProgress(true);
+    Flowtime.parallaxInPx(true);
+    Flowtime.start();
+    </script>
+</body>
+
+</html>
